@@ -5,6 +5,10 @@
     "args": {}
   },
   "mounts": [
-    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/developer/.ssh,readonly"
+    "type=bind,source=${localEnv:SSH_AUTH_SOCK},target=/tmp/ssh-agent.sock"
+  ],
+  "runArgs": [
+    "-e",
+    "SSH_AUTH_SOCK=/tmp/ssh-agent.sock"
   ]
 }
