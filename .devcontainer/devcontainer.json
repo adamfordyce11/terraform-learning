@@ -1,7 +1,10 @@
 {
-  "name": "test-dev-container",
+  "name": "AwsTerraformDevContainer",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {}
-  }
+  },
+  "mounts": [
+    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/developer/.ssh,readonly"
+  ]
 }
