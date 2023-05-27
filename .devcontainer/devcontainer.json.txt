@@ -1,0 +1,27 @@
+{
+  "name": "test-dev-container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "1.0.0"
+    }
+  },
+  "containerEnv": {
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+    "GITHUB_USER": "${localEnv:GITHUB_USER}"
+  },
+  "runArgs": ["--name=test-dev-container"],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "editor.tabSize": 4
+  },
+  "extensions": [
+    "bmewburn.vscode-intelephense-client",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-azuretools.vscode-docker",
+    "timonwong.shellcheck",
+    "tyriar.sort-lines"
+  ]
+}
